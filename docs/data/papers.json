@@ -1,7 +1,21 @@
 {
- "updated": "2026-06-23T17:12:16",
- "count": 8,
+ "updated": "2026-06-23T13:41:52",
+ "count": 10,
  "papers": [
+  {
+   "key": "doi:10.64898/2025.12.29.696804",
+   "title": "OmniCell: Unified Foundation Modeling of Single-Cell and Spatial Transcriptomics for Cellular and Molecular Insights",
+   "doi": "10.64898/2025.12.29.696804",
+   "link": "https://www.biorxiv.org/content/10.64898/2025.12.29.696804",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-23",
+   "pushed_date": "2026-06-23",
+   "priority": "🥈",
+   "bucket": "ai_bioinfo",
+   "summary_cn": "统一单细胞与空间转录组的基础模型，整合基因表达与组织语境。",
+   "relevance_cn": "为单细胞组学分析提供强大的基础模型，支持复杂生物学问题的解释与预测。",
+   "source": ""
+  },
   {
    "key": "doi:10.1073/pnas.2610619123",
    "title": "Linear-time prediction of proteome-scale microbial protein interactions.",
@@ -26,8 +40,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥇",
    "bucket": "nanopore_drs",
-   "summary_cn": "基于直接RNA测序揭示等位基因特异性RNA修饰的新方法。",
-   "relevance_cn": "支持等位基因特异性分析，拓展DRS在精细调控研究中的应用。",
+   "summary_cn": "利用DRS检测等位基因特异性RNA修饰，揭示转录后调控机制。",
+   "relevance_cn": "拓展DRS在单等位基因分辨率修饰检测中的应用，深化对表观转录组异质性的理解。",
    "source": ""
   },
   {
@@ -40,8 +54,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥈",
    "bucket": "ai_application",
-   "summary_cn": "基于层级Transformer的剪接位点预测模型。",
-   "relevance_cn": "NAR顶刊，AI在转录组分析中的经典应用。",
+   "summary_cn": "基于层次化Transformer的剪接位点预测模型。",
+   "relevance_cn": "利用深度学习解决经典生信问题，为RNA结构预测和变异分析提供工具。",
    "source": ""
   },
   {
@@ -54,8 +68,22 @@
    "pushed_date": "2026-06-23",
    "priority": "🥈",
    "bucket": "ai_application",
-   "summary_cn": "CAPER从多条件单细胞数据中提取恢复模式。",
-   "relevance_cn": "解决单细胞数据条件依赖问题，提升分析深度。",
+   "summary_cn": "从多条件scRNA-seq数据中提取和恢复条件关联模式。",
+   "relevance_cn": "利用AI处理单细胞数据，揭示细胞状态转换机制，具有生物学应用价值。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.1016/j.ygeno.2026.111285",
+   "title": "DeepGEP: Deep learning for gene expression prediction from multi-omics in mammals.",
+   "doi": "10.1016/j.ygeno.2026.111285",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42331263/",
+   "journal": "Genomics",
+   "date": "2026 Jun 22",
+   "pushed_date": "2026-06-23",
+   "priority": "🥈",
+   "bucket": "ai_bioinfo",
+   "summary_cn": "基于多组学数据的深度学习基因表达预测模型。",
+   "relevance_cn": "展示AI在整合多模态组学数据预测生物学表型方面的能力，具有方法论参考价值。",
    "source": ""
   },
   {
@@ -68,8 +96,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥇",
    "bucket": "nanopore_drs",
-   "summary_cn": "针对m5C验证的靶向校准工作流，提升检测准确性。",
-   "relevance_cn": "解决m5C检测中的校准难题，提高DRS数据可靠性。",
+   "summary_cn": "针对m5C的定点校准工作流，提升Nanopore DRS检测的准确性与可靠性。",
+   "relevance_cn": "解决m5C检测中的假阳性问题，是DRS修饰检测流程中的重要工具。",
    "source": ""
   },
   {
@@ -82,8 +110,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥈",
    "bucket": "ai_bioinfo",
-   "summary_cn": "强化时序信号的通用深度学习框架，提升纳米孔识别能力。",
-   "relevance_cn": "直接提升DRS basecalling和modification calling性能。",
+   "summary_cn": "强化时序信号的通用深度学习框架，提升Nanopore信号识别性能。",
+   "relevance_cn": "直接应用于Nanopore basecalling和modification calling，提升信号处理精度。",
    "source": ""
   },
   {
@@ -96,8 +124,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥇",
    "bucket": "nanopore_drs",
-   "summary_cn": "基于Transformer的纳米孔信号模拟器，提供basecaller引导。",
-   "relevance_cn": "为DRS信号模拟和算法benchmark提供新工具。",
+   "summary_cn": "基于Transformer的端到端纳米孔信号模拟器，引入basecaller引导，提升模拟真实度。",
+   "relevance_cn": "为DRS信号处理和modification calling提供高质量模拟数据，加速算法开发与评测。",
    "source": ""
   },
   {

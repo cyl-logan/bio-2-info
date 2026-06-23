@@ -1,0 +1,101 @@
+{
+ "date": "2026-06-23",
+ "papers": [
+  {
+   "title": "NanoSimFormer: an end-to-end Transformer-based nanopore signal simulator with basecaller guidance.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42302398/",
+   "doi": "10.1093/bioinformatics/btag402",
+   "journal": "Bioinformatics (Oxford, England)",
+   "date": "2026 Jun 16",
+   "_bucket": "nanopore_drs",
+   "priority": "🥇",
+   "summary_cn": "基于Transformer的端到端纳米孔信号模拟器，引入basecaller引导，提升模拟真实度。",
+   "relevance_cn": "为DRS信号处理和modification calling提供高质量模拟数据，加速算法开发与评测。"
+  },
+  {
+   "title": "ModiCal: A Targeted Calibration Workflow for Site-Specific m(5)C Validation by Nanopore Direct RNA Sequencing.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42153371/",
+   "doi": "10.1021/acschembio.6c00009",
+   "journal": "ACS chemical biology",
+   "date": "2026 Jun 19",
+   "_bucket": "nanopore_drs",
+   "priority": "🥇",
+   "summary_cn": "针对m5C的定点校准工作流，提升Nanopore DRS检测的准确性与可靠性。",
+   "relevance_cn": "解决m5C检测中的假阳性问题，是DRS修饰检测流程中的重要工具。"
+  },
+  {
+   "title": "DirectASRM: Uncovering allele-specific post-transcriptional RNA modifications through direct RNA sequencing.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42330361/",
+   "doi": "10.1093/bioinformatics/btag432",
+   "journal": "Bioinformatics (Oxford, England)",
+   "date": "2026 Jun 22",
+   "_bucket": "nanopore_drs",
+   "priority": "🥇",
+   "summary_cn": "利用DRS检测等位基因特异性RNA修饰，揭示转录后调控机制。",
+   "relevance_cn": "拓展DRS在单等位基因分辨率修饰检测中的应用，深化对表观转录组异质性的理解。"
+  },
+  {
+   "title": "A universal deep learning framework for empowering nanopore identification by reinforcing temporal signals.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42309994/",
+   "doi": "10.1038/s41467-026-74507-w",
+   "journal": "Nature communications",
+   "date": "2026 Jun 18",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "强化时序信号的通用深度学习框架，提升Nanopore信号识别性能。",
+   "relevance_cn": "直接应用于Nanopore basecalling和modification calling，提升信号处理精度。"
+  },
+  {
+   "title": "OmniCell: Unified Foundation Modeling of Single-Cell and Spatial Transcriptomics for Cellular and Molecular Insights",
+   "link": "https://www.biorxiv.org/content/10.64898/2025.12.29.696804",
+   "doi": "10.64898/2025.12.29.696804",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-23",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "统一单细胞与空间转录组的基础模型，整合基因表达与组织语境。",
+   "relevance_cn": "为单细胞组学分析提供强大的基础模型，支持复杂生物学问题的解释与预测。"
+  },
+  {
+   "title": "DeepGEP: Deep learning for gene expression prediction from multi-omics in mammals.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42331263/",
+   "doi": "10.1016/j.ygeno.2026.111285",
+   "journal": "Genomics",
+   "date": "2026 Jun 22",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "基于多组学数据的深度学习基因表达预测模型。",
+   "relevance_cn": "展示AI在整合多模态组学数据预测生物学表型方面的能力，具有方法论参考价值。"
+  },
+  {
+   "title": "SpliceSelectNet: a hierarchical Transformer-based deep learning model for splice site prediction.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42328788/",
+   "doi": "10.1093/nar/gkag625",
+   "journal": "Nucleic acids research",
+   "date": "2026 Jun 22",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "基于层次化Transformer的剪接位点预测模型。",
+   "relevance_cn": "利用深度学习解决经典生信问题，为RNA结构预测和变异分析提供工具。"
+  },
+  {
+   "title": "Condition-Associated Pattern Extraction and Recovery From Multi-Condition Single-Cell RNA-seq Data With CAPER.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42328733/",
+   "doi": "10.1002/advs.76186",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "date": "2026 Jun 22",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "从多条件scRNA-seq数据中提取和恢复条件关联模式。",
+   "relevance_cn": "利用AI处理单细胞数据，揭示细胞状态转换机制，具有生物学应用价值。"
+  }
+ ],
+ "no_core": false,
+ "summary_zh": "今日精选包含3篇核心DRS方法工具（NanoSimFormer, ModiCal, DirectASRM）及3篇AI方法学/应用论文，涵盖信号模拟、修饰检测、基础模型与单细胞分析。",
+ "_meta": {
+  "model": "glm-4.7-flash",
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "candidates_in": 93,
+  "papers_out": 8
+ }
+}

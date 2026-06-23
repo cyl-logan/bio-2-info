@@ -13,5 +13,40 @@
   "date": "2026-06-23",
   "pdf": false,
   "title": "Differential A-to-I editing of SINE B2 RNAs unveils an epitranscriptome response to Aβ neurotoxicity."
+ },
+ "doi:10.1093/bioinformatics/btag402": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "NanoSimFormer: an end-to-end Transformer-based nanopore signal simulator with basecaller guidance."
+ },
+ "doi:10.1021/acschembio.6c00009": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "ModiCal: A Targeted Calibration Workflow for Site-Specific m(5)C Validation by Nanopore Direct RNA Sequencing."
+ },
+ "doi:10.1038/s41467-026-74507-w": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "A universal deep learning framework for empowering nanopore identification by reinforcing temporal signals."
+ },
+ "doi:10.64898/2025.12.29.696804": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "OmniCell: Unified Foundation Modeling of Single-Cell and Spatial Transcriptomics for Cellular and Molecular Insights"
+ },
+ "doi:10.1016/j.ygeno.2026.111285": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "DeepGEP: Deep learning for gene expression prediction from multi-omics in mammals."
+ },
+ "doi:10.1093/nar/gkag625": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "SpliceSelectNet: a hierarchical Transformer-based deep learning model for splice site prediction."
+ },
+ "doi:10.1002/advs.76186": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "Condition-Associated Pattern Extraction and Recovery From Multi-Condition Single-Cell RNA-seq Data With CAPER."
  }
 }
