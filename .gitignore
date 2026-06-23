@@ -1,0 +1,18 @@
+# local runtime / secrets
+.env
+.env.local
+
+# editor / build
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+
+# data artifacts (regenerated each run; keep ledger if you want cross-run dedup)
+data/digests/candidates_*.json
+data/digests/selected_*.json
+data/digests/digest_*.md
+# Keep this so cross-day dedup works:
+!data/digests/archived_ledger.json

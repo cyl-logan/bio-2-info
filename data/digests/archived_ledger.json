@@ -1,0 +1,17 @@
+{
+ "doi:10.1093/bioinformatics/btag432": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "DirectASRM: Uncovering allele-specific post-transcriptional RNA modifications through direct RNA sequencing."
+ },
+ "doi:10.1261/rna.080698.125": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "Comparative analysis of the m6A epitranscriptome in HeLa-expressed HPV18 early transcripts reveals its potential impact on splicing."
+ },
+ "doi:10.26508/lsa.202603668": {
+  "date": "2026-06-23",
+  "pdf": false,
+  "title": "Differential A-to-I editing of SINE B2 RNAs unveils an epitranscriptome response to Aβ neurotoxicity."
+ }
+}

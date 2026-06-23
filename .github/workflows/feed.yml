@@ -1,0 +1,60 @@
+name: feed
+# 北京时间 08:15 = UTC 00:15 — 抓取 + LLM 精筛 + 推送 Telegram，对应原 Hermes cron e8b4d50ede86
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 0 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install package
+        run: pip install -e ".[dev]"
+
+      - name: Run feed (PubMed + bioRxiv → LLM → Telegram)
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: bio-2-info run-feed
+
+      - name: Upload candidates + selection artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed-${{ github.run_id }}
+          path: |
+            data/digests/candidates_*.json
+            data/digests/selected_*.json
+          retention-days: 14
+
+      - name: Commit selected_<today>.json for the 09:15 archive job
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/digests/selected_*.json
+          if ! git diff --cached --quiet -- data/digests; then
+            git commit -m "chore: feed selection $(date -u +%F) [skip ci]"
+            git push
+          else
+            echo "No selection changes."
+          fi

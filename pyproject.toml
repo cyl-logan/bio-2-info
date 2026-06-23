@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bio_2_info"
+version = "0.1.0"
+description = "Daily bioinformatics paper curation + IMA archiver + Telegram notifier"
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = []  # zero runtime deps — stdlib only
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+bio-2-info = "bio_2_info.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
