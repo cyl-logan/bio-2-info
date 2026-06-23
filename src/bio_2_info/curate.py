@@ -123,6 +123,14 @@ def curate(
     if extra_body:
         payload.update(extra_body)
 
+    # Reasoning models (e.g. Zhipu GLM-4.x flash) spend the whole max_tokens
+    # budget on hidden reasoning and return an empty `content`. Opt in to
+    # disabling/enabling thinking via LLM_THINKING (e.g. "disabled"); leaving it
+    # unset keeps the request portable for non-reasoning OpenAI-compatible APIs.
+    thinking = os.environ.get("LLM_THINKING")
+    if thinking:
+        payload["thinking"] = {"type": thinking}
+
     url = f"{base_url}/chat/completions"
     resp = _post_json(url, headers, payload)
 

@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json
 
-from bio_2_info import notify, archive
+from bio_2_info import notify, archive, curate
 from bio_2_info import __main__ as cli
 
 
@@ -98,6 +98,26 @@ def test_append_site_data_merges_and_dedups(tmp_path):
     total2 = cli._append_site_data([p1], path=path, pushed_date="2026-06-25")
     assert total2 == 1
     assert json.loads(path.read_text(encoding="utf-8"))["papers"][0]["pushed_date"] == "2026-06-23"
+
+
+def test_curate_thinking_knob(monkeypatch):
+    """LLM_THINKING env toggles the provider-specific thinking field in the payload."""
+    captured = {}
+
+    def fake_post(url, headers, payload, timeout=90):
+        captured["payload"] = payload
+        return {"choices": [{"message": {"content": '{"papers": [], "no_core": true}'}}]}
+
+    monkeypatch.setattr(curate, "_post_json", fake_post)
+    monkeypatch.setenv("LLM_API_KEY", "x")
+
+    monkeypatch.delenv("LLM_THINKING", raising=False)
+    curate.curate([{"title": "A", "_bucket": "core"}])
+    assert "thinking" not in captured["payload"]
+
+    monkeypatch.setenv("LLM_THINKING", "disabled")
+    curate.curate([{"title": "A", "_bucket": "core"}])
+    assert captured["payload"]["thinking"] == {"type": "disabled"}
 
 
 def test_archive_skip_ima_builds_digest(tmp_path):
