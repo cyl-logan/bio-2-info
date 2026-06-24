@@ -17,8 +17,8 @@ PubMed + bioRxiv         LLM (Zhipu GLM 4.6 等)        IMA「每日生信资讯
 
 | 原 cron               | 替代命令                  | 在 daily.yml 中的步骤 |
 |-----------------------|--------------------------|----------------------|
-| 8:15 feed_research    | `bio-2-info run-feed`    | 第 1 步：抓取 + 精筛 + 推 Telegram |
-| 9:15 research_archive | `bio-2-info run-archive` | 第 2 步：归档 IMA + 推 Telegram（continue-on-error） |
+| 8:15 feed_research    | `bio-2-info run-feed`    | 第 1 步：抓取 + 精筛（不发 Telegram） |
+| 9:15 research_archive | `bio-2-info run-archive` | 第 2 步：归档 IMA + 推**一条合并消息**（摘要+归档状态，continue-on-error） |
 
 ## 快速开始
 

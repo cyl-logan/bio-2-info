@@ -29,9 +29,59 @@ def test_render_feed_with_papers():
     assert "example.com/a" in msg
 
 
-def test_render_archive_empty():
-    msg = notify.render_archive_message({"status": "empty", "date": "2026-06-23"})
-    assert "无新论文" in msg
+def test_render_feed_footer_respects_max_chars():
+    sel = {
+        "date": "2026-06-23",
+        "papers": [
+            {"title": f"Paper {i}", "priority": "🥈", "summary_cn": "做了X" * 30,
+             "relevance_cn": "对DRS有用" * 10, "link": f"https://example.com/{i}"}
+            for i in range(60)
+        ],
+    }
+    msg = notify.render_feed_message(sel, max_chars=4096)
+    assert len(msg) <= 4096
+    assert msg.endswith(notify.CI_FOOTER)
+
+
+def test_render_archive_line():
+    assert "无新论文" in notify.render_archive_line({"status": "empty"})
+    assert "归档失败" in notify.render_archive_line({"status": "error"})
+    assert "跳过 IMA" in notify.render_archive_line({"skip_ima": True})
+    ok = notify.render_archive_line(
+        {"status": "ok", "total": 3, "pdf_archived": 2, "link_in_digest": 1})
+    assert "已归档 3 篇" in ok and "PDF 2" in ok and "链接 1" in ok
+    # PDFs archived but the summary-digest upload failed → don't claim 入知识库.
+    bad = notify.render_archive_line(
+        {"status": "ok", "total": 3, "pdf_archived": 2, "link_in_digest": 1,
+         "digest_uploaded": False, "digest_status": "digest 上传失败: boom"})
+    assert "digest 上传知识库失败" in bad and "入知识库" not in bad
+
+
+def test_render_feed_clamps_even_with_long_trailer():
+    sel = {"date": "2026-06-23", "papers": [{"title": "A", "link": "https://x/a"}]}
+    msg = notify.render_feed_message(sel, max_chars=200, trailer="长" * 500)
+    assert len(msg) <= 200
+    # Empty-digest branch must clamp too.
+    empty = notify.render_feed_message(
+        {"date": "2026-06-23", "papers": []}, max_chars=200, trailer="长" * 500)
+    assert len(empty) <= 200
+
+
+def test_render_feed_combined_trailer_respects_max_chars():
+    sel = {
+        "date": "2026-06-23",
+        "papers": [
+            {"title": f"Paper {i}", "priority": "🥈", "summary_cn": "做了X" * 30,
+             "relevance_cn": "对DRS有用" * 10, "link": f"https://example.com/{i}"}
+            for i in range(60)
+        ],
+    }
+    trailer = notify.render_archive_line(
+        {"status": "ok", "total": 8, "pdf_archived": 5, "link_in_digest": 3})
+    msg = notify.render_feed_message(sel, max_chars=4096, trailer=trailer)
+    assert len(msg) <= 4096
+    assert trailer in msg
+    assert msg.endswith(notify.CI_FOOTER)
 
 
 def test_paper_key_doi_priority():

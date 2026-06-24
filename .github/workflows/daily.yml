@@ -1,5 +1,6 @@
 name: daily
-# 每日一次：feed（抓取+LLM精筛+推Telegram）→ archive（selected→IMA→推Telegram）。
+# 每日一次：feed（抓取+LLM精筛）→ archive（selected→IMA→推一条合并 Telegram 消息）。
+# Telegram 只发一条：archive 阶段把「论文摘要 + 归档状态」合并后推送（推送移到 archive 之后）。
 # 单 job 串行，selected_<today>.json 在同一 runner 磁盘上传递，无需 git 中转。
 # 调度由 cron-job.org 打这个 workflow_dispatch 端点触发（不用 GH 自带 schedule）。
 on:
@@ -29,20 +30,19 @@ jobs:
       - name: Install package
         run: pip install -e ".[dev]"
 
-      - name: Feed → curate → Telegram
+      # 只抓取+精筛，不发 Telegram（合并消息在 archive 阶段统一推送），故无需 Telegram secrets。
+      - name: Feed → curate
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           # glm-4.7-flash 是推理模型，不关思考会把 max_tokens 全耗在隐藏推理上、content 返回空。
           LLM_THINKING: disabled
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: bio-2-info run-feed
 
-      # archive 可能因 IMA 抖动失败；用 continue-on-error 让后续 commit 仍把 feed 状态落库，
-      # 同时该步骤的失败仍会在日志里可见。
-      - name: Archive selected → IMA → Telegram
+      # archive 可能因 IMA 抖动失败；run-archive 已做容错：即使 IMA 异常也照常推送 digest
+      # （归档状态标注为失败）并记 pushed_ledger，再以非零退出。continue-on-error 让后续 commit 仍落库。
+      - name: Archive → IMA → combined Telegram
         id: archive
         continue-on-error: true
         env:
@@ -66,7 +66,8 @@ jobs:
             data/digests/archived_ledger.json
           retention-days: 14
 
-      # 即使 archive 失败也要提交：feed 已推 Telegram，pushed_ledger 必须落库防止次日重复推送。
+      # 即使 archive(IMA) 失败也要提交：run-archive 已先推 Telegram 并记 pushed_ledger，
+      # 必须落库防止次日重复推送。
       - name: Commit selection + ledgers + site data
         if: always()
         run: |

@@ -8,6 +8,9 @@ import urllib.error
 
 TG_API = "https://api.telegram.org"
 
+# 标注消息来源：由 GitHub Actions CI 自动推送。
+CI_FOOTER = "🤖 _由 GitHub Actions CI 自动推送_"
+
 
 class NotifyError(RuntimeError):
     pass
@@ -23,33 +26,64 @@ def send_telegram(text: str, *, token: str | None = None,
         raise NotifyError("missing TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID")
 
     url = f"{TG_API}/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": parse_mode,
-        "disable_web_page_preview": disable_web_page_preview,
-    }
-    body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    req = urllib.request.Request(url, data=body,
-                                  headers={"Content-Type": "application/json"},
-                                  method="POST")
-    try:
+
+    def _attempt(pm: str) -> dict:
+        payload = {
+            "chat_id": chat_id,
+            "text": text,
+            "disable_web_page_preview": disable_web_page_preview,
+        }
+        if pm:
+            payload["parse_mode"] = pm
+        body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        req = urllib.request.Request(url, data=body,
+                                      headers={"Content-Type": "application/json"},
+                                      method="POST")
         with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read())
+            return json.loads(resp.read())
+
+    try:
+        data = _attempt(parse_mode)
     except urllib.error.HTTPError as e:
-        raise NotifyError(f"HTTP {e.code}: {e.read()[:300]!r}") from e
+        # Telegram 400s when Markdown entities are malformed (e.g. a stray * / _ / [
+        # in a paper title). Retry once as plain text so one bad char can't drop the
+        # whole digest — losing the message would also lose the pushed_ledger record.
+        if not parse_mode:
+            raise NotifyError(f"HTTP {e.code}: {e.read()[:300]!r}") from e
+        try:
+            data = _attempt("")
+        except urllib.error.HTTPError as e2:
+            raise NotifyError(f"HTTP {e2.code}: {e2.read()[:300]!r}") from e2
     if not data.get("ok"):
         raise NotifyError(f"telegram api not ok: {data}")
     return data
 
 
 # ---------- message rendering ----------
-def render_feed_message(selected: dict, max_chars: int = 3800) -> str:
-    """Render the curated paper list as a Telegram-friendly Markdown message."""
+def render_feed_message(selected: dict, max_chars: int = 3800,
+                        trailer: str = "") -> str:
+    """Render the curated paper list as a Telegram-friendly Markdown message.
+
+    `trailer` is an optional one-line status (e.g. archive result) placed between
+    the digest body and the CI footer; it is reserved in the length budget so the
+    whole message stays within `max_chars`.
+    """
     date = selected.get("date", "")
     papers = selected.get("papers", [])
+    tail = (f"\n\n{trailer}" if trailer else "") + f"\n\n{CI_FOOTER}"
+
+    def _fit(body: str) -> str:
+        """Reserve tail in the budget, truncate body, hard-clamp to max_chars."""
+        budget = max_chars - len(tail)
+        if len(body) > budget:
+            note = "\n\n…(已截断，详见知识库 digest)"
+            cut = budget - len(note)
+            body = (body[:cut].rstrip() + note) if cut > 0 else ""
+        result = f"{body}{tail}"
+        return result if len(result) <= max_chars else result[:max_chars]
+
     if not papers:
-        return f"📚 每日生信资讯 · {date}\n\n_今日无合格论文_"
+        return _fit(f"📚 每日生信资讯 · {date}\n\n_今日无合格论文_")
 
     by_prio: dict[str, list[dict]] = {"🥇": [], "🥈": [], "🥉": []}
     for p in papers:
@@ -90,41 +124,35 @@ def render_feed_message(selected: dict, max_chars: int = 3800) -> str:
                 lines.append(f"_{meta}_")
             lines.append("")
         lines.append("")
-    text = "\n".join(lines).rstrip()
-    if len(text) > max_chars:
-        text = text[:max_chars - 100].rstrip() + "\n\n…(已截断，详见知识库 digest)"
-    return text
+    return _fit("\n".join(lines).rstrip())
 
 
-def render_archive_message(summary: dict) -> str:
+def render_archive_line(summary: dict) -> str:
+    """One-line archive status, used as the trailer in the combined feed message."""
     status = summary.get("status")
-    date = summary.get("date", "")
     if status == "empty":
-        return f"📥 *生信资讯归档* · {date}\n\n今日无新论文可归档。"
+        return "📥 _今日无新论文可归档_"
+    if status == "error":
+        return "⚠️ _归档失败（IMA 异常），未入知识库_"
+    if summary.get("skip_ima"):
+        return "📥 _本次跳过 IMA 上传，仅生成本地 digest_"
     total = summary.get("total", 0)
-    pdf = summary.get("pdf_archived", 0)
-    link = summary.get("link_in_digest", 0)
-    failed = summary.get("failed", 0)
-    skipped = summary.get("skipped_dedup", 0)
-    lines = [
-        f"📥 *生信资讯归档完成* · {date}",
-        "",
-        f"共 *{total}* 篇 → 📄 PDF {pdf} / 🔗 链接 {link}"
-        + (f" / ♻️ 去重跳过 {skipped}" if skipped else "")
-        + (f" / ⚠️ 失败 {failed}" if failed else ""),
-    ]
-    if failed and summary.get("failed_titles"):
-        lines.append("")
-        lines.append("⚠️ 失败标题（可能非OA或抓取异常）:")
-        for t in summary["failed_titles"][:5]:
-            lines.append(f"- {t[:120]}")
-    if summary.get("digest_status"):
-        lines.append("")
-        lines.append(f"_{summary['digest_status']}_")
-    if summary.get("digest_uploaded"):
-        lines.append("")
-        lines.append("📝 当日带摘要的 digest 已存入知识库「每日生信资讯」。")
-    elif summary.get("skip_ima"):
-        lines.append("")
-        lines.append("_（本次跳过 IMA 上传，仅生成本地 digest）_")
-    return "\n".join(lines)
+    pdf = summary.get("pdf_archived")
+    link = summary.get("link_in_digest")
+    skipped = summary.get("skipped_dedup")
+    failed = summary.get("failed")
+    detail = []
+    if pdf is not None:
+        detail.append(f"PDF {pdf}")
+    if link is not None:
+        detail.append(f"链接 {link}")
+    if skipped:
+        detail.append(f"去重 {skipped}")
+    if failed:
+        detail.append(f"失败 {failed}")
+    suffix = f"（{' / '.join(detail)}）" if detail else ""
+    # archive() may upload paper PDFs fine yet fail the summary-digest upload;
+    # don't claim 入知识库 in that case.
+    if not summary.get("digest_uploaded") and "失败" in (summary.get("digest_status") or ""):
+        return f"⚠️ _已归档 {total} 篇{suffix}，但 digest 上传知识库失败_"
+    return f"📥 _已归档 {total} 篇{suffix}入知识库「每日生信资讯」_"

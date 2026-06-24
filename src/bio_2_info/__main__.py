@@ -186,67 +186,59 @@ def cmd_archive(args) -> int:
 
 
 def cmd_run_feed(args) -> int:
-    """Feed → curate → notify (the 8:15 job replacement)."""
+    """Feed → curate: fetch candidates and curate them into selected_<today>.json.
+
+    No Telegram send here — run-archive sends one combined message (digest +
+    archive status) after it has archived. `--dry-run` previews the digest body.
+    """
     rc = cmd_feed(argparse.Namespace(data_dir=args.data_dir, print=False))
     if rc:
         return rc
     rc = cmd_curate(argparse.Namespace(data_dir=args.data_dir, input=None, print=False))
     if rc:
         return rc
-    with open(_selected_path(Path(args.data_dir)), encoding="utf-8") as f:
-        sel = json.load(f)
-    text = notify.render_feed_message(sel)
     if args.dry_run:
-        print(text)
-        return 0
-    notify.send_telegram(text)
-    added = _record_pushed(sel.get("papers", []), Path(args.data_dir))
-    total = _append_site_data(sel.get("papers", []))
-    sys.stderr.write(
-        f"[run-feed] telegram delivered; recorded {added} pushed papers; "
-        f"site now {total} papers\n"
-    )
+        with open(_selected_path(Path(args.data_dir)), encoding="utf-8") as f:
+            sel = json.load(f)
+        print(notify.render_feed_message(sel))
+    sys.stderr.write("[run-feed] curated; run-archive will push the combined message\n")
     return 0
 
 
 def cmd_run_archive(args) -> int:
-    """Archive selected → notify (the 9:15 job replacement)."""
-    rc = cmd_archive(argparse.Namespace(
-        data_dir=args.data_dir, input=None, print=False,
-        skip_ima=args.skip_ima,
-    ))
-    if rc:
-        return rc
-    # rebuild summary by re-running archive output… simpler: re-read digest file path
-    # We re-call archive with the cached selected.json? No: we already wrote the digest,
-    # but didn't capture the summary. Re-read selected and emit a quick stat.
+    """Archive selected → send ONE combined Telegram message (digest + status).
+
+    The digest must reach Telegram even when IMA archival fails, so archival is
+    wrapped: on error we still send the digest with a failure trailer, record the
+    pushed ledger, and return non-zero so CI surfaces the archive failure.
+    """
     data_dir = Path(args.data_dir)
-    with open(_selected_path(data_dir), encoding="utf-8") as f:
+    path = _selected_path(data_dir)
+    if not path.exists():
+        sys.stderr.write(f"[run-archive] no selected file at {path}; run feed first\n")
+        return 2
+    with open(path, encoding="utf-8") as f:
         sel = json.load(f)
-    # Build a minimal summary from on-disk artifacts so we don't double-archive.
-    today_h = datetime.date.today().strftime("%Y-%m-%d")
-    digest_local = data_dir / f"digest_{_today_compact()}.md"
-    summary = {
-        "status": "ok",
-        "date": today_h,
-        "total": len(sel.get("papers", [])),
-        "pdf_archived": None,
-        "link_in_digest": None,
-        "skipped_dedup": None,
-        "failed": 0,
-        "failed_titles": [],
-        "digest_local": str(digest_local),
-        "digest_uploaded": not args.skip_ima,
-        "skip_ima": args.skip_ima,
-        "digest_status": "",
-    }
-    text = notify.render_archive_message(summary)
+    skip = args.skip_ima or os.environ.get("BIO_SKIP_IMA") == "1"
+    archive_ok = True
+    try:
+        summary = archive.archive(sel, str(data_dir), skip_ima=skip)
+    except Exception as e:  # IMA/network hiccup must not swallow the digest push.
+        archive_ok = False
+        summary = {"status": "error", "skip_ima": skip, "error": str(e)}
+        sys.stderr.write(f"[run-archive] archive raised, sending digest anyway: {e}\n")
+    text = notify.render_feed_message(sel, trailer=notify.render_archive_line(summary))
     if args.dry_run:
         print(text)
-        return 0
+        return 0 if archive_ok else 1
     notify.send_telegram(text)
-    sys.stderr.write("[run-archive] telegram delivered\n")
-    return 0
+    added = _record_pushed(sel.get("papers", []), data_dir)
+    total = _append_site_data(sel.get("papers", []))
+    sys.stderr.write(
+        f"[run-archive] combined telegram delivered; recorded {added} pushed; "
+        f"site now {total} papers\n"
+    )
+    return 0 if archive_ok else 1
 
 
 def main(argv: list[str] | None = None) -> int:

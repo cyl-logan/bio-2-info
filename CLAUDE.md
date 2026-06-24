@@ -40,7 +40,7 @@ Four stages, each a module under `src/bio_2_info/`, wired together by `__main__.
 | feed | `feed.py` | PubMed E-utilities + bioRxiv API | `candidates_<YYYYMMDD>.json` |
 | curate | `curate.py` | candidates | `selected_<YYYYMMDD>.json` |
 | archive | `archive.py` | selected | `digest_<YYYYMMDD>.md` + IMA upload |
-| notify | `notify.py` | selected/summary | Telegram message |
+| notify | `notify.py` | selected + archive summary | one combined Telegram message |
 
 Key cross-cutting concepts a single file won't reveal:
 
@@ -49,21 +49,26 @@ Key cross-cutting concepts a single file won't reveal:
   (`_candidates_path` / `_selected_path` in `__main__.py`). `run-feed` / `run-archive` chain the
   stages but still round-trip through these files.
 
-- **One CI workflow runs the whole day end-to-end.** `daily.yml` (one `workflow_dispatch`,
-  triggered by cron-job.org) runs `run-feed` then `run-archive` in a single job; `run-archive`
-  reads the `selected_<today>.json` that `run-feed` just wrote to the same runner's disk — no git
-  hand-off needed. The `archive` step is `continue-on-error` and the commit step is `if: always()`,
-  so feed's `pushed_ledger.json` always gets committed even if IMA archival fails (otherwise papers
-  would be re-pushed the next day).
+- **One CI workflow, one Telegram message.** `daily.yml` (one `workflow_dispatch`, triggered by
+  cron-job.org) runs `run-feed` then `run-archive` in a single job. `run-feed` only fetches +
+  curates (no send); `run-archive` reads the `selected_<today>.json` from the same runner's disk,
+  archives, then sends a **single combined message** (`render_feed_message(sel, trailer=
+  render_archive_line(summary))` — digest body + a one-line archive status + CI footer) and records
+  the ledgers. Archival is wrapped in `try/except`, so the digest is pushed even if IMA throws (the
+  trailer just shows a failure note); `run-archive` then returns non-zero. The `archive` step is
+  `continue-on-error` and the commit step is `if: always()`, so `pushed_ledger.json` always gets
+  committed even when IMA archival fails (otherwise papers would be re-pushed the next day), while a
+  trailing gate still reddens CI on archive failure.
 
 - **Two independent cross-day dedup ledgers, both keyed by `archive.paper_key()`**
   (`doi:<doi>` preferred, else `title:<first 80 chars>`) and both committed back to the repo:
   - `archived_ledger.json` (written by `archive.py` during `run-archive`) — skips re-uploading PDFs to IMA.
-  - `pushed_ledger.json` (written by `__main__._record_pushed` in `run-feed`, committed by `daily.yml`)
-    — records every paper actually pushed to Telegram. `cmd_feed` calls `_filter_already_pushed` to
-    drop these from candidates **before** curation, so a paper is never re-curated or re-notified on
-    a later day. Only *pushed* (selected + sent) papers are recorded; fetched-but-unselected papers
-    stay eligible for future days. Recording happens only on a real send, not `--dry-run`.
+  - `pushed_ledger.json` (written by `__main__._record_pushed` in `run-archive` after the combined
+    send, committed by `daily.yml`) — records every paper actually pushed to Telegram. `cmd_feed`
+    calls `_filter_already_pushed` to drop these from candidates **before** curation, so a paper is
+    never re-curated or re-notified on a later day. Only *pushed* (selected + sent) papers are
+    recorded; fetched-but-unselected papers stay eligible for future days. Recording happens only on
+    a real send, not `--dry-run`.
 
 - **`_bucket` / `priority` flow end-to-end.** `feed.py` tags each paper with `_bucket`
   (`nanopore_drs`/`rna_mod`/`core`/`ai_bioinfo`/`ai_application`); `curate.py`'s prompt turns those
