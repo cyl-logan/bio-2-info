@@ -48,5 +48,40 @@
   "date": "2026-06-23",
   "pdf": false,
   "title": "Condition-Associated Pattern Extraction and Recovery From Multi-Condition Single-Cell RNA-seq Data With CAPER."
+ },
+ "doi:10.1021/acschembio.6c00154": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "Nanopore Sequencing Reveals rRNA Modification Changes in Human Cells Experiencing Oxidative or Inflammatory Stress."
+ },
+ "doi:10.1371/journal.pcbi.1014430": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "A novel biclustering algorithm for mining m6A co-methylation patterns based on beta-binomial distribution and data screening strategy."
+ },
+ "doi:10.1186/s13073-026-01694-y": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "Tumor-naïve ctDNA detection with deep learning-enhanced error suppression for sensitive mutation calling."
+ },
+ "doi:10.1093/bioinformatics/btag426": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "Graphylo Var: Predicting the impact of non-coding variants using a multi-species sequence model."
+ },
+ "doi:10.64898/2026.06.17.732633": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "DeepCDS: Ab initio coding sequence prediction in prokaryotic short reads"
+ },
+ "doi:10.1093/bioinformatics/btag372": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "CycleVI: Isolating cell cycle variation with an interpretable deep generative model."
+ },
+ "doi:10.1007/s10142-026-01905-0": {
+  "date": "2026-06-24",
+  "pdf": false,
+  "title": "Unveiling the molecular mechanism of Qingwen Baidu decoction against dengue fever: an integrated study of bioinformatic analysis, machine learning and network pharmacology."
  }
 }

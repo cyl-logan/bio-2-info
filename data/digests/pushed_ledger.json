@@ -46,5 +46,53 @@
   "title": "Condition-Associated Pattern Extraction and Recovery From Multi-Condition Single-Cell RNA-seq Data With CAPER.",
   "doi": "10.1002/advs.76186",
   "link": "https://pubmed.ncbi.nlm.nih.gov/42328733/"
+ },
+ "doi:10.1261/rna.080698.125": {
+  "date": "2026-06-24",
+  "title": "Comparative analysis of the m6A epitranscriptome in HeLa-expressed HPV18 early transcripts reveals its potential impact on splicing.",
+  "doi": "10.1261/rna.080698.125",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42303463/"
+ },
+ "doi:10.1021/acschembio.6c00154": {
+  "date": "2026-06-24",
+  "title": "Nanopore Sequencing Reveals rRNA Modification Changes in Human Cells Experiencing Oxidative or Inflammatory Stress.",
+  "doi": "10.1021/acschembio.6c00154",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42200432/"
+ },
+ "doi:10.1371/journal.pcbi.1014430": {
+  "date": "2026-06-24",
+  "title": "A novel biclustering algorithm for mining m6A co-methylation patterns based on beta-binomial distribution and data screening strategy.",
+  "doi": "10.1371/journal.pcbi.1014430",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42335174/"
+ },
+ "doi:10.1186/s13073-026-01694-y": {
+  "date": "2026-06-24",
+  "title": "Tumor-naïve ctDNA detection with deep learning-enhanced error suppression for sensitive mutation calling.",
+  "doi": "10.1186/s13073-026-01694-y",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42332784/"
+ },
+ "doi:10.1093/bioinformatics/btag426": {
+  "date": "2026-06-24",
+  "title": "Graphylo Var: Predicting the impact of non-coding variants using a multi-species sequence model.",
+  "doi": "10.1093/bioinformatics/btag426",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42330352/"
+ },
+ "doi:10.64898/2026.06.17.732633": {
+  "date": "2026-06-24",
+  "title": "DeepCDS: Ab initio coding sequence prediction in prokaryotic short reads",
+  "doi": "10.64898/2026.06.17.732633",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.17.732633"
+ },
+ "doi:10.1093/bioinformatics/btag372": {
+  "date": "2026-06-24",
+  "title": "CycleVI: Isolating cell cycle variation with an interpretable deep generative model.",
+  "doi": "10.1093/bioinformatics/btag372",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42334940/"
+ },
+ "doi:10.1007/s10142-026-01905-0": {
+  "date": "2026-06-24",
+  "title": "Unveiling the molecular mechanism of Qingwen Baidu decoction against dengue fever: an integrated study of bioinformatic analysis, machine learning and network pharmacology.",
+  "doi": "10.1007/s10142-026-01905-0",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42332327/"
  }
 }
