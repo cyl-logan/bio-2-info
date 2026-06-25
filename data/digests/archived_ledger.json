@@ -83,5 +83,45 @@
   "date": "2026-06-24",
   "pdf": false,
   "title": "Unveiling the molecular mechanism of Qingwen Baidu decoction against dengue fever: an integrated study of bioinformatic analysis, machine learning and network pharmacology."
+ },
+ "doi:10.1038/s44319-026-00840-2": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "Validation of the mRNA epitranscriptome: SCARPET reveals that mapped m(1)A sites are inosine."
+ },
+ "doi:10.1186/s13059-026-04154-3": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "A cytoplasmic index for quantifying immune-related A-to-I RNA editing."
+ },
+ "doi:10.1002/anie.1434064": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "Structure-Encoded Oxidation Enables Nucleotide-Resolved RNA Editing, Conjugation, and Structural Probing."
+ },
+ "doi:10.1016/j.talanta.2026.130180": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "Immunoelectroanalytical multiplexing of RNA methylation signatures to decode oncogenic point mutations in cancer cells."
+ },
+ "doi:10.1186/s13073-026-01675-1": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "VariantMedium: sensitive and generalizable somatic point mutation calling with 3D DenseNets trained and evaluated on experimental data."
+ },
+ "doi:10.1109/tcbbio.2026.3705107": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "Adapting Generative Genome Foundation Model Evo for Functional Genomics Prediction via Progressive Fine-Tuning."
+ },
+ "doi:10.1002/advs.76142": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "SPADE: A Deep Learning Framework for Spatial Mapping and Quantitative Cell-Cell Interaction Inference."
+ },
+ "doi:10.1038/s41596-026-01389-z": {
+  "date": "2026-06-25",
+  "pdf": false,
+  "title": "Facilitating structure-based drug discovery with an artificial intelligence-driven virtual screening platform."
  }
 }

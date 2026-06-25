@@ -1,0 +1,101 @@
+{
+ "date": "2026-06-25",
+ "papers": [
+  {
+   "title": "Validation of the mRNA epitranscriptome: SCARPET reveals that mapped m(1)A sites are inosine.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42337368/",
+   "doi": "10.1038/s44319-026-00840-2",
+   "journal": "EMBO reports",
+   "date": "2026 Jun 23",
+   "_bucket": "rna_mod",
+   "priority": "🥇",
+   "summary_cn": "提出SCARPET验证mRNA表观转录组，指出既往m1A位点多为肌苷。",
+   "relevance_cn": "直接影响RNA修饰图谱可信度与位点验证策略。"
+  },
+  {
+   "title": "A cytoplasmic index for quantifying immune-related A-to-I RNA editing.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42310695/",
+   "doi": "10.1186/s13059-026-04154-3",
+   "journal": "Genome biology",
+   "date": "2026 Jun 17",
+   "_bucket": "rna_mod",
+   "priority": "🥇",
+   "summary_cn": "提出胞质指数定量免疫相关A-to-I RNA编辑，区分编辑来源与免疫状态。",
+   "relevance_cn": "为RNA编辑定量和免疫转录组分析提供新指标。"
+  },
+  {
+   "title": "Structure-Encoded Oxidation Enables Nucleotide-Resolved RNA Editing, Conjugation, and Structural Probing.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42080500/",
+   "doi": "10.1002/anie.1434064",
+   "journal": "Angewandte Chemie (International ed. in English)",
+   "date": "2026 Jun 22",
+   "_bucket": "rna_mod",
+   "priority": "🥇",
+   "summary_cn": "开发结构编码氧化化学，实现单核苷酸分辨率RNA编辑、偶联和结构探测。",
+   "relevance_cn": "拓展RNA修饰和结构解析的化学工具箱。"
+  },
+  {
+   "title": "Immunoelectroanalytical multiplexing of RNA methylation signatures to decode oncogenic point mutations in cancer cells.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42323914/",
+   "doi": "10.1016/j.talanta.2026.130180",
+   "journal": "Talanta",
+   "date": "2026 Jun 21",
+   "_bucket": "rna_mod",
+   "priority": "🥇",
+   "summary_cn": "构建免疫电化学多重检测RNA甲基化签名，用于识别癌细胞突变状态。",
+   "relevance_cn": "提供RNA甲基化多重检测的分析平台思路。"
+  },
+  {
+   "title": "VariantMedium: sensitive and generalizable somatic point mutation calling with 3D DenseNets trained and evaluated on experimental data.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42316276/",
+   "doi": "10.1186/s13073-026-01675-1",
+   "journal": "Genome medicine",
+   "date": "2026 Jun 19",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "VariantMedium用3D DenseNet在实验数据上训练评测，实现泛化性体细胞点突变检测。",
+   "relevance_cn": "深度学习variant calling对测序信号/错误建模有借鉴。"
+  },
+  {
+   "title": "Adapting Generative Genome Foundation Model Evo for Functional Genomics Prediction via Progressive Fine-Tuning.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42313599/",
+   "doi": "10.1109/TCBBIO.2026.3705107",
+   "journal": "IEEE transactions on computational biology and bioinformatics",
+   "date": "2026 Jun 18",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "通过渐进式微调适配生成式基因组基础模型Evo，用于功能基因组预测。",
+   "relevance_cn": "代表基因组foundation model在下游任务迁移的路线。"
+  },
+  {
+   "title": "SPADE: A Deep Learning Framework for Spatial Mapping and Quantitative Cell-Cell Interaction Inference.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42314058/",
+   "doi": "10.1002/advs.76142",
+   "journal": "Advanced science (Weinheim, Baden-Wurttemberg, Germany)",
+   "date": "2026 Jun 18",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "SPADE用深度学习进行空间映射并定量推断细胞间相互作用。",
+   "relevance_cn": "可借鉴于空间转录组和单细胞多组学整合分析。"
+  },
+  {
+   "title": "Facilitating structure-based drug discovery with an artificial intelligence-driven virtual screening platform.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42342989/",
+   "doi": "10.1038/s41596-026-01389-z",
+   "journal": "Nature protocols",
+   "date": "2026 Jun 24",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "Nature Protocols介绍AI驱动虚拟筛选平台，支持结构基础药物发现流程。",
+   "relevance_cn": "AI落地分子筛选的标准化流程，对生物AI应用有参考。"
+  }
+ ],
+ "no_core": false,
+ "summary_zh": "今日核心以RNA修饰位点验证、A-to-I编辑定量和化学探测方法为主，AI方向覆盖突变检测、基因组基础模型、空间组学和虚拟筛选。",
+ "_meta": {
+  "model": "gpt-5.5",
+  "base_url": "https://api.tfclab-logan.xyz/v1",
+  "candidates_in": 71,
+  "papers_out": 8
+ }
+}
