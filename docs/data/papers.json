@@ -1,7 +1,91 @@
 {
- "updated": "2026-06-25T08:23:50",
- "count": 26,
+ "updated": "2026-06-26T01:02:30",
+ "count": 32,
  "papers": [
+  {
+   "key": "doi:10.64898/2026.03.04.709501",
+   "title": "FoldARE, an RNA secondary structure analysis and prediction tool via generative pseudo-SHAPE modeling",
+   "doi": "10.64898/2026.03.04.709501",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.03.04.709501",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-25",
+   "pushed_date": "2026-06-26",
+   "priority": "🥇",
+   "bucket": "core",
+   "summary_cn": "提出FoldARE，以生成式pseudo-SHAPE约束改进RNA二级结构预测。",
+   "relevance_cn": "有助于结合结构背景理解RNA修饰功能。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.64898/2026.06.22.733900",
+   "title": "RNabel-A Standalone Software Tool for Annotating Tandem Mass Spectra of Modified Ribonucleic Acids",
+   "doi": "10.64898/2026.06.22.733900",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.733900",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-24",
+   "pushed_date": "2026-06-26",
+   "priority": "🥇",
+   "bucket": "core",
+   "summary_cn": "发布RNabel，用于修饰RNA寡核苷酸MS/MS谱图深度注释。",
+   "relevance_cn": "直接服务RNA修饰鉴定与定位的方法工具。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.64898/2026.06.20.733449",
+   "title": "predNMD: prediction of nonsense-mediated mRNA decay for improved clinical variant pathogenicity classification",
+   "doi": "10.64898/2026.06.20.733449",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.20.733449",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-23",
+   "pushed_date": "2026-06-26",
+   "priority": "🥇",
+   "bucket": "core",
+   "summary_cn": "开发随机森林predNMD，改进无义突变触发mRNA降解预测。",
+   "relevance_cn": "提供RNA稳定性与转录后调控预测工具参考。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.64898/2026.06.18.733285",
+   "title": "Systematic benchmarking of zero-shot utility and robustness in single-cell transcriptomic foundation models",
+   "doi": "10.64898/2026.06.18.733285",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.18.733285",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-23",
+   "pushed_date": "2026-06-26",
+   "priority": "🥈",
+   "bucket": "ai_bioinfo",
+   "summary_cn": "系统评测20种单细胞基础模型在零样本任务中的效用与鲁棒性。",
+   "relevance_cn": "为组学基础模型选型和benchmark设计提供依据。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.64898/2026.06.07.730684",
+   "title": "HoloCell: A Generative Foundation Model for Holistic Cellular Modeling",
+   "doi": "10.64898/2026.06.07.730684",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.07.730684",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-23",
+   "pushed_date": "2026-06-26",
+   "priority": "🥈",
+   "bucket": "ai_bioinfo",
+   "summary_cn": "提出HoloCell，统一整合单细胞多组学并处理模态缺失。",
+   "relevance_cn": "展示多组学生成式基础模型的新框架。",
+   "source": ""
+  },
+  {
+   "key": "doi:10.1016/j.compbiomed.2026.111827",
+   "title": "AI-enabled structural bioinformatics identifies repositioned kinase inhibitor against Poxviridae kinases.",
+   "doi": "10.1016/j.compbiomed.2026.111827",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42341425/",
+   "journal": "Computers in biology and medicine",
+   "date": "2026 Jun 24",
+   "pushed_date": "2026-06-26",
+   "priority": "🥈",
+   "bucket": "ai_application",
+   "summary_cn": "用AI结构生信筛选可重定位激酶抑制剂靶向痘病毒激酶。",
+   "relevance_cn": "是AI结构预测与药物重定位的分子级应用案例。",
+   "source": ""
+  },
   {
    "key": "doi:10.1038/s41596-026-01389-z",
    "title": "Facilitating structure-based drug discovery with an artificial intelligence-driven virtual screening platform.",
@@ -250,8 +334,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥈",
    "bucket": "ai_bioinfo",
-   "summary_cn": "线性时间预测全基因组尺度微生物蛋白相互作用。",
-   "relevance_cn": "高效AI方法，解决大规模蛋白质组预测的计算瓶颈。",
+   "summary_cn": "提出线性时间算法，实现微生物蛋白互作的蛋白质组尺度预测。",
+   "relevance_cn": "高效AI互作预测可借鉴到大规模分子网络分析。",
    "source": ""
   },
   {
@@ -362,8 +446,8 @@
    "pushed_date": "2026-06-23",
    "priority": "🥉",
    "bucket": "rna_mod",
-   "summary_cn": "单细胞RNA编辑揭示ADAR1在T细胞耗竭及免疫治疗抵抗中的作用。",
-   "relevance_cn": "顶刊机制研究，ADAR1与免疫治疗相关。",
+   "summary_cn": "单细胞RNA编辑分析揭示T细胞ADAR1驱动免疫耗竭和抗PD-1耐受。",
+   "relevance_cn": "体现RNA编辑在肿瘤免疫单细胞解析中的价值。",
    "source": ""
   }
  ]

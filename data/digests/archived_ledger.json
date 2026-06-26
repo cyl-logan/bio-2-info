@@ -123,5 +123,45 @@
   "date": "2026-06-25",
   "pdf": false,
   "title": "Facilitating structure-based drug discovery with an artificial intelligence-driven virtual screening platform."
+ },
+ "doi:10.64898/2026.06.22.733900": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "RNabel-A Standalone Software Tool for Annotating Tandem Mass Spectra of Modified Ribonucleic Acids"
+ },
+ "doi:10.64898/2026.03.04.709501": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "FoldARE, an RNA secondary structure analysis and prediction tool via generative pseudo-SHAPE modeling"
+ },
+ "doi:10.64898/2026.06.20.733449": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "predNMD: prediction of nonsense-mediated mRNA decay for improved clinical variant pathogenicity classification"
+ },
+ "doi:10.64898/2026.06.18.733285": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "Systematic benchmarking of zero-shot utility and robustness in single-cell transcriptomic foundation models"
+ },
+ "doi:10.64898/2026.06.07.730684": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "HoloCell: A Generative Foundation Model for Holistic Cellular Modeling"
+ },
+ "doi:10.1073/pnas.2610619123": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "Linear-time prediction of proteome-scale microbial protein interactions."
+ },
+ "doi:10.1016/j.compbiomed.2026.111827": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "AI-enabled structural bioinformatics identifies repositioned kinase inhibitor against Poxviridae kinases."
+ },
+ "doi:10.1002/advs.76143": {
+  "date": "2026-06-26",
+  "pdf": false,
+  "title": "Single-Cell RNA Editing Identifies T Cell ADAR1 as a Key Regulator of Immune Exhaustion and Anti-PD-1 Resistance in Colorectal Cancer."
  }
 }
