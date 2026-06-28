@@ -238,5 +238,47 @@
   "title": "ADAR2-Mediated RNA Editing Promotes TDP-43 Nuclear Export and Alters RNA Binding",
   "doi": "10.64898/2026.06.22.730622",
   "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.730622"
+ },
+ "doi:10.1186/s13059-026-04168-x": {
+  "date": "2026-06-28",
+  "title": "ResSAT: enhancing spatial transcriptomics prediction from H&E-stained histology images with an interactive spot transformer.",
+  "doi": "10.1186/s13059-026-04168-x",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42363230/"
+ },
+ "doi:10.1038/s41467-026-72862-2": {
+  "date": "2026-06-28",
+  "title": "Integrative cross-sample alignment and spatially differential gene analysis for spatial transcriptomics.",
+  "doi": "10.1038/s41467-026-72862-2",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42350375/"
+ },
+ "doi:10.1093/nargab/lqag063": {
+  "date": "2026-06-28",
+  "title": "Power-law penalties correct distance bias in single-cell co-accessibility and deep-learning chromatin interaction predictions.",
+  "doi": "10.1093/nargab/lqag063",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42359001/"
+ },
+ "doi:10.1093/bioinformatics/btag447": {
+  "date": "2026-06-28",
+  "title": "SegJointGene: joint cell segmentation and spatial gene prioritization by information entropy guided convolutional neural networks.",
+  "doi": "10.1093/bioinformatics/btag447",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42345533/"
+ },
+ "doi:10.1093/gpbjnl/qzag049": {
+  "date": "2026-06-28",
+  "title": "π-HelixNovo2: Making Accurate Online De Novo Peptide Sequencing Available to All.",
+  "doi": "10.1093/gpbjnl/qzag049",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42345540/"
+ },
+ "doi:10.1007/s00439-026-02847-0": {
+  "date": "2026-06-28",
+  "title": "AI in variant analysis: fast track to genetic diagnoses.",
+  "doi": "10.1007/s00439-026-02847-0",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42362888/"
+ },
+ "doi:10.1016/j.compbiomed.2026.111833": {
+  "date": "2026-06-28",
+  "title": "Machine Learning-Based single-cell characterization of lipid metabolic reprogramming in prostate cancer.",
+  "doi": "10.1016/j.compbiomed.2026.111833",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42361409/"
  }
 }

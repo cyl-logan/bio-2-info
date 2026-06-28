@@ -1,0 +1,90 @@
+{
+ "date": "2026-06-28",
+ "papers": [
+  {
+   "title": "ResSAT: enhancing spatial transcriptomics prediction from H&E-stained histology images with an interactive spot transformer.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42363230/",
+   "doi": "10.1186/s13059-026-04168-x",
+   "journal": "Genome biology",
+   "date": "2026 Jun 26",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出交互式spot transformer，从H&E图像预测空间转录组表达。",
+   "relevance_cn": "空间组学AI建模范式，可借鉴于多模态组学预测。"
+  },
+  {
+   "title": "Integrative cross-sample alignment and spatially differential gene analysis for spatial transcriptomics.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42350375/",
+   "doi": "10.1038/s41467-026-72862-2",
+   "journal": "Nature communications",
+   "date": "2026 Jun 25",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "开发跨样本空间转录组配准与空间差异基因分析一体化方法。",
+   "relevance_cn": "提升空间转录组批间比较与差异检测能力。"
+  },
+  {
+   "title": "Power-law penalties correct distance bias in single-cell co-accessibility and deep-learning chromatin interaction predictions.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42359001/",
+   "doi": "10.1093/nargab/lqag063",
+   "journal": "NAR genomics and bioinformatics",
+   "date": "2026 Jun",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "用幂律惩罚校正单细胞共可及性和深度学习互作预测的距离偏差。",
+   "relevance_cn": "对基因调控网络与AI模型偏差校正有参考价值。"
+  },
+  {
+   "title": "SegJointGene: joint cell segmentation and spatial gene prioritization by information entropy guided convolutional neural networks.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42345533/",
+   "doi": "10.1093/bioinformatics/btag447",
+   "journal": "Bioinformatics (Oxford, England)",
+   "date": "2026 Jun 25",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出熵引导CNN，同时完成细胞分割和空间基因优先级排序。",
+   "relevance_cn": "适合空间转录组图像-表达联合分析借鉴。"
+  },
+  {
+   "title": "π-HelixNovo2: Making Accurate Online De Novo Peptide Sequencing Available to All.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42345540/",
+   "doi": "10.1093/gpbjnl/qzag049",
+   "journal": "Genomics, proteomics & bioinformatics",
+   "date": "2026 Jun 25",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "发布在线化高精度de novo肽段测序工具，降低蛋白组解析门槛。",
+   "relevance_cn": "展示深度学习序列解码工具的工程化落地。"
+  },
+  {
+   "title": "AI in variant analysis: fast track to genetic diagnoses.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42362888/",
+   "doi": "10.1007/s00439-026-02847-0",
+   "journal": "Human genetics",
+   "date": "2026 Jun 26",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "综述AI在遗传变异解读和遗传病快速诊断中的应用进展。",
+   "relevance_cn": "对基因组变异注释和优先级排序流程有借鉴。"
+  },
+  {
+   "title": "Machine Learning-Based single-cell characterization of lipid metabolic reprogramming in prostate cancer.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42361409/",
+   "doi": "10.1016/j.compbiomed.2026.111833",
+   "journal": "Computers in biology and medicine",
+   "date": "2026 Jun 26",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "结合机器学习和单细胞数据解析前列腺癌脂质代谢重编程特征。",
+   "relevance_cn": "是单细胞组学中ML落地应用的代表案例。"
+  }
+ ],
+ "no_core": true,
+ "summary_zh": "今日无核心新方法论文；精选空间组学AI、调控预测偏差校正、序列解码及变异/单细胞AI应用。",
+ "_meta": {
+  "model": "gpt-5.5",
+  "base_url": "https://api.tfclab-logan.xyz/v1",
+  "candidates_in": 60,
+  "papers_out": 7
+ }
+}
