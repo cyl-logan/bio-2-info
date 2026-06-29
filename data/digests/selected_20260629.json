@@ -1,0 +1,90 @@
+{
+ "date": "2026-06-29",
+ "papers": [
+  {
+   "title": "eRNAformer enables genome-wide de novo mapping of enhancer-derived RNA loci",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.24.734403",
+   "doi": "10.64898/2026.06.24.734403",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-27",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出CNN-Transformer多模态框架，用序列和RNA-seq从头定位eRNA位点。",
+   "relevance_cn": "贴近转录组注释与RNA调控，可借鉴到DRS转录本特征建模。"
+  },
+  {
+   "title": "PlantGeneAnn: a strand-specific genome foundation model for ab initio gene structure annotation of plant genomes",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.25.733695",
+   "doi": "10.64898/2026.06.25.733695",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-26",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "发布植物链特异基因组基础模型，少量高质量标注即可从头预测基因结构。",
+   "relevance_cn": "展示基因组基础模型做结构注释的范式，适合组学工具开发参考。"
+  },
+  {
+   "title": "SPEAK: Spatial Prompting with Expert Aligned Knowledge for Tissue Domain Identification in Spatial Transcriptomics",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.733750",
+   "doi": "10.64898/2026.06.22.733750",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-26",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出LLM空间提示方法，结合邻域细胞类型、marker和专家知识识别空间域。",
+   "relevance_cn": "LLM与组学先验融合的案例，对空间/单细胞分析有借鉴价值。"
+  },
+  {
+   "title": "Evaluating sequence-to-function deep learning models for ancestry-stratified regulatory variant effect prediction using multi-ancestry blood eQTLs",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.730889",
+   "doi": "10.64898/2026.06.22.730889",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-26",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "用多祖源血液eQTL系统评测Borzoi和AlphaGenome的调控变异效应预测。",
+   "relevance_cn": "是序列到功能模型公平性benchmark，适合AI基因组学评估参考。"
+  },
+  {
+   "title": "Client-server interfaces enable efficient agent-driven variant calling",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.25.734665",
+   "doi": "10.64898/2026.06.25.734665",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-28",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "设计面向LLM agent的客户端-服务器接口，提升自动化变异调用效率和可靠性。",
+   "relevance_cn": "对构建agent驱动的生信pipeline和工具接口很有启发。"
+  },
+  {
+   "title": "Computational reconstruction of hierarchical cis-regulatory networks reveals synergistic transcription control and disease-associated rewiring",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.24.734159",
+   "doi": "10.64898/2026.06.24.734159",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-26",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "ORIGAMI把顺式调控建模为潜在图推断，整合序列、表观组和3D染色质。",
+   "relevance_cn": "多组学深度学习建图框架，可借鉴到调控网络和转录组建模。"
+  },
+  {
+   "title": "Enhancing molecular property prediction of transformer models with dual graph representation.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42364982/",
+   "doi": "10.1038/s41467-026-75005-9",
+   "journal": "Nature communications",
+   "date": "2026 Jun 27",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "提出双图表示增强Transformer分子性质预测，在药物相关任务中提升表现。",
+   "relevance_cn": "高质量AI落地应用，展示图表示与Transformer结合的分子建模范式。"
+  }
+ ],
+ "no_core": true,
+ "summary_zh": "今日无核心新方法论文；精选以AI生信方法、组学模型评测和分子AI应用为主。",
+ "_meta": {
+  "model": "gpt-5.5",
+  "base_url": "https://api.tfclab-logan.xyz/v1",
+  "candidates_in": 67,
+  "papers_out": 7
+ }
+}

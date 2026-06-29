@@ -280,5 +280,47 @@
   "title": "Machine Learning-Based single-cell characterization of lipid metabolic reprogramming in prostate cancer.",
   "doi": "10.1016/j.compbiomed.2026.111833",
   "link": "https://pubmed.ncbi.nlm.nih.gov/42361409/"
+ },
+ "doi:10.64898/2026.06.24.734403": {
+  "date": "2026-06-29",
+  "title": "eRNAformer enables genome-wide de novo mapping of enhancer-derived RNA loci",
+  "doi": "10.64898/2026.06.24.734403",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.24.734403"
+ },
+ "doi:10.64898/2026.06.25.733695": {
+  "date": "2026-06-29",
+  "title": "PlantGeneAnn: a strand-specific genome foundation model for ab initio gene structure annotation of plant genomes",
+  "doi": "10.64898/2026.06.25.733695",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.25.733695"
+ },
+ "doi:10.64898/2026.06.22.733750": {
+  "date": "2026-06-29",
+  "title": "SPEAK: Spatial Prompting with Expert Aligned Knowledge for Tissue Domain Identification in Spatial Transcriptomics",
+  "doi": "10.64898/2026.06.22.733750",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.733750"
+ },
+ "doi:10.64898/2026.06.22.730889": {
+  "date": "2026-06-29",
+  "title": "Evaluating sequence-to-function deep learning models for ancestry-stratified regulatory variant effect prediction using multi-ancestry blood eQTLs",
+  "doi": "10.64898/2026.06.22.730889",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.730889"
+ },
+ "doi:10.64898/2026.06.25.734665": {
+  "date": "2026-06-29",
+  "title": "Client-server interfaces enable efficient agent-driven variant calling",
+  "doi": "10.64898/2026.06.25.734665",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.25.734665"
+ },
+ "doi:10.64898/2026.06.24.734159": {
+  "date": "2026-06-29",
+  "title": "Computational reconstruction of hierarchical cis-regulatory networks reveals synergistic transcription control and disease-associated rewiring",
+  "doi": "10.64898/2026.06.24.734159",
+  "link": "https://www.biorxiv.org/content/10.64898/2026.06.24.734159"
+ },
+ "doi:10.1038/s41467-026-75005-9": {
+  "date": "2026-06-29",
+  "title": "Enhancing molecular property prediction of transformer models with dual graph representation.",
+  "doi": "10.1038/s41467-026-75005-9",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/42364982/"
  }
 }

@@ -238,5 +238,40 @@
   "date": "2026-06-28",
   "pdf": false,
   "title": "Machine Learning-Based single-cell characterization of lipid metabolic reprogramming in prostate cancer."
+ },
+ "doi:10.64898/2026.06.24.734403": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "eRNAformer enables genome-wide de novo mapping of enhancer-derived RNA loci"
+ },
+ "doi:10.64898/2026.06.25.733695": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "PlantGeneAnn: a strand-specific genome foundation model for ab initio gene structure annotation of plant genomes"
+ },
+ "doi:10.64898/2026.06.22.733750": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "SPEAK: Spatial Prompting with Expert Aligned Knowledge for Tissue Domain Identification in Spatial Transcriptomics"
+ },
+ "doi:10.64898/2026.06.22.730889": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "Evaluating sequence-to-function deep learning models for ancestry-stratified regulatory variant effect prediction using multi-ancestry blood eQTLs"
+ },
+ "doi:10.64898/2026.06.25.734665": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "Client-server interfaces enable efficient agent-driven variant calling"
+ },
+ "doi:10.64898/2026.06.24.734159": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "Computational reconstruction of hierarchical cis-regulatory networks reveals synergistic transcription control and disease-associated rewiring"
+ },
+ "doi:10.1038/s41467-026-75005-9": {
+  "date": "2026-06-29",
+  "pdf": false,
+  "title": "Enhancing molecular property prediction of transformer models with dual graph representation."
  }
 }
