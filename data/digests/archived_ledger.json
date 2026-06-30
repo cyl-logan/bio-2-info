@@ -273,5 +273,45 @@
   "date": "2026-06-29",
   "pdf": false,
   "title": "Enhancing molecular property prediction of transformer models with dual graph representation."
+ },
+ "doi:10.1093/gpbjnl/qzag052": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "NanoRAPID: A Deep Learning-based Framework for Single-molecule RNA Structure Analysis Using Nanopore Direct RNA Sequencing."
+ },
+ "doi:10.64898/2026.06.23.734060": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Rett syndrome lifespan extension in mice via AI-guided ADAR editing"
+ },
+ "doi:10.1101/2025.11.03.686231": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Svirlpool: structural variant detection from long read sequencing by local assembly"
+ },
+ "doi:10.64898/2026.06.22.733850": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Glitch genes: embedding geometry predicts functional fragility in single-cell foundation models"
+ },
+ "doi:10.64898/2026.06.23.734131": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Learning Fragmentation Physics or Exploiting Sequence Priors? Benchmarking Bias in Deep Learning Models for De Novo Peptide Sequencing"
+ },
+ "doi:10.1101/2024.03.09.583681": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Effective structure-aware protein alignment via residue-level contrastive learning"
+ },
+ "doi:10.1021/acs.analchem.6c00995": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Deep Learning-Driven Saccharide Online Sequencing for Elucidating the Pathological Alterations of Heparan Sulfate in APAP-Induced Acute Liver Injury."
+ },
+ "doi:10.34133/csbj.0143": {
+  "date": "2026-06-30",
+  "pdf": false,
+  "title": "Ensemble Machine Learning Approaches Predict Survival in Lower-Grade Glioma Based on Glycosphingolipid Gene Expression and Metabolic Modeling."
  }
 }

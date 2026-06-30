@@ -1,0 +1,101 @@
+{
+ "date": "2026-06-30",
+ "papers": [
+  {
+   "title": "NanoRAPID: A Deep Learning-based Framework for Single-molecule RNA Structure Analysis Using Nanopore Direct RNA Sequencing.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42371794/",
+   "doi": "10.1093/gpbjnl/qzag052",
+   "journal": "Genomics, proteomics & bioinformatics",
+   "date": "2026 Jun 29",
+   "_bucket": "nanopore_drs",
+   "priority": "🥇",
+   "summary_cn": "提出NanoRAPID，用深度学习从Nanopore DRS解析单分子RNA结构。",
+   "relevance_cn": "直接服务DRS信号解析与RNA结构/修饰联合研究。"
+  },
+  {
+   "title": "Rett syndrome lifespan extension in mice via AI-guided ADAR editing",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.23.734060",
+   "doi": "10.64898/2026.06.23.734060",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-28",
+   "_bucket": "core",
+   "priority": "🥇",
+   "summary_cn": "用生成式AI设计ADAR招募gRNA，在RNA层面校正MECP2无义突变。",
+   "relevance_cn": "展示AI辅助RNA编辑设计，对表观转录组工程有启发。"
+  },
+  {
+   "title": "Svirlpool: structural variant detection from long read sequencing by local assembly",
+   "link": "https://www.biorxiv.org/content/10.1101/2025.11.03.686231",
+   "doi": "10.1101/2025.11.03.686231",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-29",
+   "_bucket": "core",
+   "priority": "🥇",
+   "summary_cn": "开发Svirlpool，通过局部组装提升ONT长读长多样本SV检测。",
+   "relevance_cn": "长读长算法思路可借鉴到Nanopore DRS变异/异构体分析。"
+  },
+  {
+   "title": "Glitch genes: embedding geometry predicts functional fragility in single-cell foundation models",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.22.733850",
+   "doi": "10.64898/2026.06.22.733850",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-27",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出仅基于权重的嵌入几何审计，识别单细胞基础模型中的脆弱基因。",
+   "relevance_cn": "有助于评估组学基础模型可靠性和可解释性。"
+  },
+  {
+   "title": "Learning Fragmentation Physics or Exploiting Sequence Priors? Benchmarking Bias in Deep Learning Models for De Novo Peptide Sequencing",
+   "link": "https://www.biorxiv.org/content/10.64898/2026.06.23.734131",
+   "doi": "10.64898/2026.06.23.734131",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-29",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "提出DeNovo-PBI基准，量化深度学习肽测序模型的序列先验偏倚。",
+   "relevance_cn": "为生物序列AI模型benchmark和偏倚诊断提供范式。"
+  },
+  {
+   "title": "Effective structure-aware protein alignment via residue-level contrastive learning",
+   "link": "https://www.biorxiv.org/content/10.1101/2024.03.09.583681",
+   "doi": "10.1101/2024.03.09.583681",
+   "journal": "bioRxiv (preprint)",
+   "date": "2026-06-27",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "用残基层面对比学习构建结构感知蛋白比对，提高远缘相似性识别。",
+   "relevance_cn": "代表蛋白语言模型在序列-结构任务中的方法进展。"
+  },
+  {
+   "title": "Deep Learning-Driven Saccharide Online Sequencing for Elucidating the Pathological Alterations of Heparan Sulfate in APAP-Induced Acute Liver Injury.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42272111/",
+   "doi": "10.1021/acs.analchem.6c00995",
+   "journal": "Analytical chemistry",
+   "date": "2026 Jun 23",
+   "_bucket": "ai_bioinfo",
+   "priority": "🥈",
+   "summary_cn": "以深度学习驱动糖链在线测序，解析肝损伤中硫酸乙酰肝素改变。",
+   "relevance_cn": "展示AI处理复杂分子测序信号的可迁移应用。"
+  },
+  {
+   "title": "Ensemble Machine Learning Approaches Predict Survival in Lower-Grade Glioma Based on Glycosphingolipid Gene Expression and Metabolic Modeling.",
+   "link": "https://pubmed.ncbi.nlm.nih.gov/42368494/",
+   "doi": "10.34133/csbj.0143",
+   "journal": "Computational and structural biotechnology journal",
+   "date": "2026",
+   "_bucket": "ai_application",
+   "priority": "🥈",
+   "summary_cn": "整合糖鞘脂基因表达和代谢建模，用集成机器学习预测低级别胶质瘤生存。",
+   "relevance_cn": "是组学特征工程与ML预后建模的落地案例。"
+  }
+ ],
+ "no_core": false,
+ "summary_zh": "今日核心亮点是Nanopore DRS单分子RNA结构深度学习框架，并有RNA编辑AI设计与多项组学AI方法/应用。",
+ "_meta": {
+  "model": "gpt-5.5",
+  "base_url": "https://api.tfclab-logan.xyz/v1",
+  "candidates_in": 65,
+  "papers_out": 8
+ }
+}
