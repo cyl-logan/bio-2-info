@@ -313,5 +313,45 @@
   "date": "2026-06-30",
   "pdf": false,
   "title": "Ensemble Machine Learning Approaches Predict Survival in Lower-Grade Glioma Based on Glycosphingolipid Gene Expression and Metabolic Modeling."
+ },
+ "doi:10.1186/s12864-026-12893-7": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Evaluation of Dorado v5.2.0 de novo basecalling models for the detection of tRNA modifications using RNA004 chemistry."
+ },
+ "doi:10.1038/s41597-026-07696-0": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "A Nanopore Direct RNA Sequencing Atlas of RNA Modifications in pig (Sus scrofa domesticus) Testes across Sexual Maturation."
+ },
+ "doi:10.1093/gpbjnl/qzag055": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Tranquillyzer: A Neural Network Framework for Long-read Annotation and Demultiplexing."
+ },
+ "doi:10.64898/2026.06.28.735057": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Homology-aware cross-validation strategies for generalization assessment in RNA structure prediction"
+ },
+ "doi:10.64898/2026.06.28.735023": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Peptide:MHC Binding Stability Prediction Using Protein Language Models"
+ },
+ "doi:10.64898/2026.06.28.734975": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Pep2Mol: 3D Molecule Generation Targeting Protein-Protein Interfaces with Diffusion Models"
+ },
+ "doi:10.1038/s41598-026-55834-w": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Explainable machine learning identifies small high-performance gene signatures from full transcriptomes in human liver preservation cohorts."
+ },
+ "doi:10.34133/csbj.0142": {
+  "date": "2026-07-01",
+  "pdf": false,
+  "title": "Adversarial Sequence Mutations in AlphaFold and ESMFold Reveal Nonphysical Structural Invariance, Confidence Failures, and Concerns for Protein Design."
  }
 }
