@@ -353,5 +353,40 @@
   "date": "2026-07-01",
   "pdf": false,
   "title": "Adversarial Sequence Mutations in AlphaFold and ESMFold Reveal Nonphysical Structural Invariance, Confidence Failures, and Concerns for Protein Design."
+ },
+ "doi:10.1093/gpbjnl/qzag053": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "Decoding RNA N6-Methyladenosine Methylome of Wheat Using Machine Learning and Nanopore Direct RNA Sequencing."
+ },
+ "doi:10.64898/2026.06.30.735557": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "A refined Saccharomyces cerevisiae reference transcriptome from Direct RNA Sequencing, with a reusable pipeline for UTR annotation updates"
+ },
+ "doi:10.1002/cpz1.70411": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "High-throughput Profiling of Pseudouridines in Microbiome-derived Bacterial RNA."
+ },
+ "doi:10.64898/2026.06.28.735106": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "Tabular Foundation Models Are Competitive Cellular Perturbation Predictors Across Biological Scales"
+ },
+ "doi:10.1016/j.jare.2025.10.056": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "scMapNet: Marker-based cell type annotation of scRNA-seq data via vision transfer learning with tabular-to-image transformations."
+ },
+ "doi:10.1371/journal.pcbi.1014476": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "DeepMethylation: A deep learning framework for tissue-specific DNA methylation prediction and functional variant annotation."
+ },
+ "doi:10.1021/acssynbio.6c00275": {
+  "date": "2026-07-02",
+  "pdf": false,
+  "title": "An Explainable Deep Learning Framework Integrating DNA Sequence and Transcription Initiation Signals for Gene Expression Prediction."
  }
 }
